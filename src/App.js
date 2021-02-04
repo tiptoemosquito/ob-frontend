@@ -2,15 +2,21 @@ import React, {Component} from 'react'
 import './App.css';
 import { connect } from 'react-redux'
 import {getTheaters} from './actions/theaters'
+import TheaterForm from './containers/TheaterForm'
 
 class App extends Component {
+  componentDidMount(){
+    this.props.getTheaters()
+  }
 
   render(){
-    const theatersLis = this.props.theaters.map((th) => <li key={th.id}>(td.name) - {th.classic ? "Classic" : "Not a Classic"}</li>)
+    console.log("Rendering")
+    const theatersLis = this.props.theaters.map((th) => <li key={th.id}>(th.name)</li>)
 
     return (
       <div className="App">
         <h1>Add Theater</h1>
+        <TheaterForm />
         <hr/>
         <h1>Your Theaters</h1>
         <ul>

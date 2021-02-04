@@ -11,7 +11,20 @@ const theaterReducer = (state = {theaters: [], loading: false}, action) => {
                     ...state,
                     theaters: action.payload,
                     loading: false
-                }    
+                } 
+                
+            case "ADD_THEATER":
+                return {
+                    ...state, 
+                    loading: true
+                }
+
+            case "THEATER_ADDED":
+                return {
+                    ...state,
+                    theaters: [...state.theaters, action.payload],
+                    loading: true
+                }
 
             default:
                 return state; 
