@@ -7,7 +7,7 @@ export const getTheaters = () =>{
     }
 }
 
-export const addTheater = theater => {
+export const addTheater = (theater) => {
     return (dispatch) => {
         dispatch({type: "ADD_THEATER"})
         fetch('/theaters', {

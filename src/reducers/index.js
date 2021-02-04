@@ -1,13 +1,12 @@
-// combine reducers in here
+
 
 import { combineReducers } from 'redux'
 import theaterReducer from './theaterReducer'
+import productionReducer from './productionReducer'
 
 const rootReducer = combineReducers({
-    theaterReducer
-    
-    // add other reducers 
-    // don't put key in here
+    theaterReducer,
+    productionReducer,
 })
 
 export default rootReducer; 
