@@ -1,5 +1,3 @@
-
-
 import { combineReducers } from 'redux'
 import theaterReducer from './theaterReducer'
 import productionReducer from './productionReducer'

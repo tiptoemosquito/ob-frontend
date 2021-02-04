@@ -1,7 +1,7 @@
 export const getTheaters = () =>{
     return (dispatch) => {
         dispatch({type: "LOADING_THEATERS"})
-        fetch('/theaters')
+        fetch('http://localhost:3001/theaters')
         .then(res => res.json())
         .then(theaters => dispatch({type: "FETCH_THEATERS", payload: theaters}))
     }
@@ -10,7 +10,7 @@ export const getTheaters = () =>{
 export const addTheater = (theater) => {
     return (dispatch) => {
         dispatch({type: "ADD_THEATER"})
-        fetch('/theaters', {
+        fetch('http://localhost:3001/theaters', {
             method: 'POST',
             body: JSON.stringify(theater),
             header:{
@@ -18,6 +18,6 @@ export const addTheater = (theater) => {
             }
         })
         .then(res => res.json())
-        .then(theater => dispatch({type: "THEATER_ADDED"}))
+        .then(theater => dispatch({type: "THEATER_ADDED", payload: theater}))
     }
 }

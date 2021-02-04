@@ -1,38 +1,30 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 import './App.css';
-import { connect } from 'react-redux'
-import {getTheaters} from './actions/theaters'
-import TheaterForm from './containers/TheaterForm'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import TheaterContainer from './containers/TheaterContainer';
+import ProductionContainer from './containers/ProductionContainer';
+import Home from './containers/Home';
+import NavBar from './components/NavBar';
 
 class App extends Component {
-  componentDidMount(){
-    this.props.getTheaters()
-  }
 
-  render(){
+  render() {
     console.log("Rendering")
-    const theatersLis = this.props.theaters.map((th) => <li key={th.id}>(th.name)</li>)
 
     return (
-      <div className="App">
-        <h1>Add Theater</h1>
-        <TheaterForm />
-        <hr/>
-        <h1>Your Theaters</h1>
-        <ul>
-          {this.props.loading ? <h3>Loading...</h3> : theatersLis}
-        </ul>
-      </div>
+      <Router>
+        <NavBar />
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/theaters" component={TheaterContainer}/>
+            <Route exact path="/productions" component={ProductionContainer} />
+        </Switch>
+        </div>
+      </Router>
     );
   }
 }
 
-const mapStateToProps = state => {
-  console.log("I am state", state)
-  return {
-    theaters: state.theaterReducer.theaters,
-    loading: state.theaterReducer.loading
-  }
-}
 
-export default connect(mapStateToProps, {getTheaters})(App);
+export default App;
