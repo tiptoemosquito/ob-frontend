@@ -5,6 +5,14 @@ const theaterReducer = (state = {theaters: [], loading: false}, action) => {
                     ...state, 
                     loading: true
                 }
+            
+            case "FETCH_THEATERS":
+                return {
+                    ...state,
+                    theaters: action.payload,
+                    loading: false
+                }    
+
             default:
                 return state; 
         }
