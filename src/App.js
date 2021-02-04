@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import TheaterContainer from './containers/TheaterContainer';
-import ProductionContainer from './containers/ProductionContainer';
-import Home from './containers/Home';
-import NavBar from './components/NavBar';
+import TheaterContainer from './containers/TheaterContainer.js';
+import ProductionContainer from './containers/ProductionContainer.js';
+import Home from './containers/Home.js';
+import NavBar from './components/NavBar.js';
 
 class App extends Component {
 

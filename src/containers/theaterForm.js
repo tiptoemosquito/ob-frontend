@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addTheater } from '../actions/theaters'
+import { addTheater } from '../actions/theaters.js'
 import { connect } from 'react-redux'
 
 class TheaterForm extends Component {

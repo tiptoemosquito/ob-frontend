@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import theaterReducer from './theaterReducer'
-import productionReducer from './productionReducer'
+import theaterReducer from './theaterReducer.js'
+import productionReducer from './productionReducer.js'
 
 const rootReducer = combineReducers({
     theaterReducer,

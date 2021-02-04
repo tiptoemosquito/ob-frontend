@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TheaterForm from './TheaterForm.js';
 import { connect } from 'react-redux';
-import { getTheaters } from '../actions/theaters';
+import { getTheaters } from '../actions/theaters.js';
 
 class TheaterContainer extends Component {
     componentDidMount() {
@@ -18,9 +18,9 @@ class TheaterContainer extends Component {
                 <TheaterForm/>
                 <hr/>
                 <h2>Theater Productions</h2>
-                    <li>
+                    <ul>
                         {this.props.loading ? <h3>Loading...</h3> : theatersLis}
-                    </li>
+                    </ul>
             </div>
         )
     }

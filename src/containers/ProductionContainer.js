@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ProductionForm from './ProductionForm';
+import ProductionForm from './ProductionForm.js';
 import { connect } from 'react-redux';
-import { getProductions } from '../actions/productions';
+import { getProductions } from '../actions/productions.js';
 
 class ProductionContainer extends Component {
     componentDidMount() {
@@ -18,9 +18,9 @@ class ProductionContainer extends Component {
             <ProductionForm />
             <hr/>
             <h2>Productions</h2>
-                <li>
+                <ul>
                     {this.props.loading ? <h3>Loading. . .</h3> : prodctLis}
-                </li>
+                </ul>
             </div>
         )
     }
