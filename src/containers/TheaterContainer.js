@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TheaterForm from './TheaterForm.js';
 import { connect } from 'react-redux';
 import { getTheaters } from '../actions/theaters.js';
+import { Link } from 'react-router-dom';
 
 class TheaterContainer extends Component {
     componentDidMount() {

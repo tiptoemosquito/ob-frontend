@@ -21,3 +21,18 @@ export const addTheater = (theater) => {
         .then(theater => dispatch({type: "THEATER_ADDED", payload: theater}))
     }
 }
+
+export const addTheaterProduction = (production) => {
+    return (dispatch) => {
+        dispatch({type: "ADD_THEATER_PRODUCTION"})
+        fetch('http://localhost:3001/productions', {
+            method: 'POST',
+            body: JSON.stringify(production),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(production => dispatch({type: "THEATER_PRODUCTION_ADDED", payload: production}))
+    }
+}
