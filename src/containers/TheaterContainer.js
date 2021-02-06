@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import TheaterForm from './TheaterForm.js';
+import Theater from '../components/Theater.js'
 import { connect } from 'react-redux';
 import { getTheaters } from '../actions/theaters.js';
-import { Link } from 'react-router-dom';
+
 
 class TheaterContainer extends Component {
     componentDidMount() {
@@ -11,7 +12,7 @@ class TheaterContainer extends Component {
 
     render() {
         console.log("Rendering")
-        const theatersLis = this.props.theaters.map((th) => <li key={th.id}>{th.name}</li>)
+        const theatersLis = this.props.theaters.map((th) => <Theater theater={th}/> )
 
         return (
             <div className="App">

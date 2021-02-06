@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addProduction } from '../actions/productions.js';
+import { addTheaterProduction } from '../actions/theaters.js';
 import { connect } from 'react-redux';
 
 
@@ -74,4 +74,4 @@ class ProductionForm extends Component {
     }
 }
 
-export default connect(null, {addProduction})(ProductionForm);
+export default connect(null, {addTheaterProduction})(ProductionForm);

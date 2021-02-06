@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import ProductionForm from './ProductionForm.js';
 import { connect } from 'react-redux';
 import { getProductions } from '../actions/productions.js';
-import { Link } from 'react-router-dom'
+
 
 class ProductionContainer extends Component {
     componentDidMount() {
@@ -11,17 +10,16 @@ class ProductionContainer extends Component {
     
     render() {
         console.log("Rendering")
-        const prodctLis = this.props.productions.map((pr) => <li key={pr.id}>{pr.title}</li>)
-    
+        const productLis = this.props.productions.map((pr) => <li key={pr.id}>{pr.title}</li>)
+        
         return (
             <div className="App">
-            <h2>Create Production</h2>
-            <ProductionForm />
-            <hr/>
             <h2>Productions</h2>
-                <ul>
-                    {this.props.loading ? <h3>Loading. . .</h3> : prodctLis}
-                </ul>
+            <hr/>
+    
+                <li>
+                    {this.props.loading ? <h3>Loading. . .</h3> : productLis}
+                </li>
             </div>
         )
     }

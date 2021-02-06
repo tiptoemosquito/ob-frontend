@@ -6,11 +6,10 @@ class TheaterForm extends Component {
     state={
         theater: {
             name: ""
-        },
-        loading: false
+        }
     }
 
-    handleOnChange = event => {
+    handleOnChange = (event) => {
         this.setState({...this.state,
             theater: {...this.state.theater,
                 name: event.target.value
@@ -18,14 +17,14 @@ class TheaterForm extends Component {
         })
     }
 
-    handleOnSubmit = event => {
+    handleOnSubmit = (event) => {
         event.preventDefault()
         const theater = {...this.state.theater}
         console.log(theater)
         this.props.addTheater(theater)
         this.setState({
             theater: {
-                name: ""
+                name: "",
             },
             loading: false
         })
