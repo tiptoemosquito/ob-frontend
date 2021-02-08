@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addTheaterProduction } from '../actions/theaters.js';
+import { addTheaterProduction } from '../actions/theaters';
 import { connect } from 'react-redux';
 
 

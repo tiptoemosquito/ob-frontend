@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { getProductions } from '../actions/productions.js';
+import { getProductions } from '../actions/productions';
 
 
 class ProductionContainer extends Component {

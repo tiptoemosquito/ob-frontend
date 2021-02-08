@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { addTheater } from '../actions/theaters.js'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { addTheater } from '../actions/theaters';
+import { connect } from 'react-redux';
 
 class TheaterForm extends Component {
     state={
@@ -35,7 +35,8 @@ class TheaterForm extends Component {
         <form onSubmit={this.handleOnSubmit}> 
             <input 
             type="text"
-            value={this.state.theater.name}
+            name="theater"
+            value={this.state.name}
             onChange={this.handleOnChange}/>
             <button type="submit">Add Theater</button>
         </form>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import TheaterForm from './TheaterForm.js';
-import Theater from '../components/Theater.js'
+import TheaterForm from './TheaterForm';
+import Theater from '../components/Theater'
 import { connect } from 'react-redux';
-import { getTheaters } from '../actions/theaters.js';
+import { getTheaters } from '../actions/theaters';
 
 
 class TheaterContainer extends Component {

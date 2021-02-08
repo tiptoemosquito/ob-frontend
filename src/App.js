@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import TheaterContainer from './containers/TheaterContainer.js';
-import TheaterShow from './containers/TheaterShow.js';
-import ProductionContainer from './containers/ProductionContainer.js';
-import ProductionShow from './containers/ProductionShow.js';
-import Home from './components/Home.js';
-import NavBar from './components/NavBar.js';
+import TheaterContainer from './containers/TheaterContainer';
+import TheaterShow from './containers/TheaterShow';
+import ProductionContainer from './containers/ProductionContainer';
+import ProductionShow from './containers/ProductionShow';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
 
 class App extends Component {
 

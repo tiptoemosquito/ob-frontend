@@ -23,7 +23,7 @@ const theaterReducer = (state = {theaters: [], loading: false}, action) => {
                 return {
                     ...state,
                     theaters: [...state.theaters, action.payload],
-                    loading: true
+                    loading: false
                 }
 
             default:
