@@ -26,6 +26,26 @@ const theaterReducer = (state = {theaters: [], loading: false}, action) => {
                     loading: false
                 }
 
+            case "ADD_THEATER_PRODUCTION":
+                return {
+                    ...state,
+                    loading: true
+                }
+
+            case "THEATER_PRODUCTION_ADDED":
+                const newTheaters = state.theaters.map((th) => {
+                    if (th.id === action.payload.theater_id) {
+                        return {...th, productions: [...th.productions, action.payload]}
+                    } else {
+                        return th
+                    }
+                })
+                return {
+                    ...state, 
+                    theaters: newTheaters,
+                    loading: false
+                }
+
             default:
                 return state; 
         }

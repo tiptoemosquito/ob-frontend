@@ -5,7 +5,7 @@ import ProductionForm from './ProductionForm';
 
 class TheaterShow extends Component {
     render() {
-        console.log("Hey")
+        console.log("Stuff Happening")
         const theater = this.props.theaters.find((th) => `${th.id}` === this.props.match.params.id )
         const productionLis = theater.productions.map((p) => <Production production={p}/> )
         return (

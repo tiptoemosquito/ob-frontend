@@ -13,7 +13,7 @@ export const addTheater = (theater) => {
         fetch ('http://localhost:3001/theaters', {
             method: 'POST',
             body: JSON.stringify(theater),
-            header:{
+            headers:{
                 'Content-Type': 'application/json'
             }
         })
