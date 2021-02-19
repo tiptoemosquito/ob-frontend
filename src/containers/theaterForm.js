@@ -3,7 +3,7 @@ import { addTheater } from '../actions/theaters';
 import { connect } from 'react-redux';
 
 class TheaterForm extends Component {
-    state={
+    state = {
         theater: {
             name: ""
         }

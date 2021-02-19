@@ -16,13 +16,13 @@ class App extends Component {
     return (
       <Router>
         <NavBar />
-        <div className="conatiner">
+        <div className="container">
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/theaters" component={TheaterContainer}/>
-            <Route exact path="/theaters/:id" component={TheaterShow} />
-            <Route exact path="/productions" component={ProductionContainer} />
-            <Route exact path="/productions/:id" component={ProductionShow} />
+            <Route exact path="/theaters/:id" component={TheaterShow}/>
+            <Route exact path="/productions" component={ProductionContainer}/>
+            <Route exact path="/productions/:id" component={ProductionShow}/>
         </Switch>
         </div>
       </Router>

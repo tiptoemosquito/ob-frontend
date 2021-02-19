@@ -4,9 +4,7 @@ import { getProductions } from '../actions/productions';
 
 
 class ProductionContainer extends Component {
-    componentDidMount() {
-        this.props.getProductions()
-    }
+
     
     render() {
         console.log("Rendering")

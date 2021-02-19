@@ -6,9 +6,7 @@ import { getTheaters } from '../actions/theaters';
 
 
 class TheaterContainer extends Component {
-    componentDidMount() {
-        this.props.getTheaters()
-    }
+
 
     render() {
         console.log("Rendering")
@@ -20,9 +18,9 @@ class TheaterContainer extends Component {
                 <TheaterForm/>
                 <hr/>
                 <h2>Theater Productions</h2>
-                    <ul>
+                    <li>
                         {this.props.loading ? <h3>Loading...</h3> : theatersLis}
-                    </ul>
+                    </li>
             </div>
         )
     }

@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import mapDispatchToProps from 'react-redux/lib/connect/mapDispatchToProps'
+import { getProductions } from '../actions/productions.js'
+import { getTheaters } from '../actions/theaters.js'
 
 class Home extends Component {
+    componentDidMount() {
+        this.props.getProductions(),
+        this.props.getTheaters()
+    }
+
     render() {
         return (
             <div>
@@ -11,4 +20,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+mapDispatchToProps = (dispatch) => {
+   return {
+    getTheaters: () =>  dispatch(getTheaters()),
+    getProductions: () => dispatch(getProductions())
+   }
+}
+
+export default connect(null, mapDispatchToProps)(Home);
