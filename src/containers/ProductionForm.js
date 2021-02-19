@@ -21,11 +21,22 @@ class ProductionForm extends Component {
         })
     }
 
+
+    // handleOnChange = (event) => {
+    //     this.setState({...this.state,
+    //         theater: {...this.state.theater,
+    //             name: event.target.value
+    //         }
+    //     })
+    // }
+
     handleOnSubmit = (event) => {
         event.preventDefault()
-        const production = {...this.state.production}
+        const production = {...this.state.production,
+        theater_id: this.props.theather_id
+        }
         console.log(production)
-        this.props.addProduction(production)
+        this.props.addTheaterProduction(production)
         this.setState({
             production: {
                 title: "",

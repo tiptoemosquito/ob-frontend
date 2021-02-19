@@ -4,7 +4,10 @@ import { getProductions } from '../actions/productions';
 
 
 class ProductionContainer extends Component {
-
+    componentDidMount() {
+        console.log("Productions Mounted")
+        this.props.getProductions()
+    }
     
     render() {
         console.log("Rendering")
@@ -15,9 +18,9 @@ class ProductionContainer extends Component {
             <h2>Productions</h2>
             <hr/>
     
-                <li>
+                <ul>
                     {this.props.loading ? <h3>Loading. . .</h3> : productLis}
-                </li>
+                </ul>
             </div>
         )
     }
@@ -30,5 +33,6 @@ const mapStateToProps = (state) => {
     loading: state.productionReducer.loading,
   }
 }
+
 
 export default connect(mapStateToProps, {getProductions})(ProductionContainer);

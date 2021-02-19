@@ -18,9 +18,9 @@ class TheaterContainer extends Component {
                 <TheaterForm/>
                 <hr/>
                 <h2>Theater Productions</h2>
-                    <li>
+                    <ul>
                         {this.props.loading ? <h3>Loading...</h3> : theatersLis}
-                    </li>
+                    </ul>
             </div>
         )
     }
