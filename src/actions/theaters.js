@@ -1,7 +1,10 @@
+const URL = 'http://localhost:3001'
+
+
 export const getTheaters = () => {
     return (dispatch) => {
         dispatch({type: "LOADING_THEATERS"})
-        fetch ('/theaters')
+        fetch (URL + '/theaters')
         .then(res => res.json())
         .then(theaters => dispatch({type: "FETCH_THEATERS", payload: theaters}))
     }
@@ -10,7 +13,7 @@ export const getTheaters = () => {
 export const addTheater = theater => {
     return (dispatch) => {
         dispatch({type: "ADD_THEATER"})
-        fetch ('/theaters', {
+        fetch (URL + '/theaters', {
             method: 'POST',
             body: JSON.stringify(theater),
             headers: {
@@ -25,7 +28,7 @@ export const addTheater = theater => {
 export const addTheaterProduction = (production) => {
     return (dispatch) => {
         dispatch({type: "ADD_THEATER_PRODUCTION"})
-        fetch ('/productions', {
+        fetch (URL + '/productions', {
             method: 'POST',
             body: JSON.stringify(production),
             headers: {

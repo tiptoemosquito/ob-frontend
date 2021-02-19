@@ -33,16 +33,16 @@ const theaterReducer = (state = {theaters: [], loading: false}, action) => {
                 }
 
             case "THEATER_PRODUCTION_ADDED":
-                const newTheaters = state.theaters.map((th) => {
-                    if (th.id === action.payload.theater_id) {
-                        return {...th, productions: [...th.productions, action.payload]}
-                    } else {
-                        return th
-                    }
-                })
+                // const newTheaters = state.theaters.map((th) => {
+                //     if (th.id === action.payload.theater_id) {
+                //         return {...th, productions: [...th.productions, action.payload]}
+                //     } else {
+                //         return th
+                //     }
+                // })
                 return {
                     ...state, 
-                    theaters: newTheaters,
+                    theaters: [...state.theaters, action.payload], 
                     loading: false
                 }
 

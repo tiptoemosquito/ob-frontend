@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Production from '../components/Production';
 import ProductionForm from './ProductionForm';
+import { addTheaterProduction } from '../actions/theaters'
+import { getProductions } from '../actions/productions'
 
 class TheaterShow extends Component {
+ 
+
     render() {
         console.log("Stuff Happening")
         const theater = this.props.theaters.find((th) => `${th.id}` === this.props.match.params.id)
@@ -15,9 +19,9 @@ class TheaterShow extends Component {
                 <h1> {theater.name} Productions </h1>
                 <h2>Add Production</h2>
                 <ProductionForm theater_id={theater.id}/>
-                <li>
+                <ul>
                     {productionLis}
-                </li>
+                </ul>
             </div>
         )
     }
@@ -29,6 +33,6 @@ const mapStateToProps = (state) => {
       theaters: state.theaterReducer.theaters,
       productions: state.productionReducer.productions
     }
-  }
+}
 
-export default connect(mapStateToProps)(TheaterShow);
+export default connect(mapStateToProps, {addTheaterProduction, getProductions})(TheaterShow);
